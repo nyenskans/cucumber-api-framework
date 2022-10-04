@@ -1,0 +1,53 @@
+class 6
+
+-- recap --
+       Data tables we use to achieve data driven testing
+    From Data Table - only works for one step
+    From Example table - works for entire scenario
+    From Scenario
+    From excel file
+
+    (Use Example Table where ENTIRE scenario needs to be tested with different/multiple test data.
+    Use Data table where test data is Explicitly meant for specific steps and user would like to interpret based
+    on use case internally.)
+
+    2 types of data tables:
+    - with headers - list of maps
+    - without headers - list
+
+    If the volume of data is high, these functionalities will not work.
+    We have to implement spreadsheets (Excel files)
+
+    We are changing the source of data --> it will not be passed from the script, but from an external source
+
+
+
+    We need reports to be able to show progress to the client
+    When we execute a scenario, from the console we cannot see which one got executed, so we define a plugin in runner class
+    plugin = {"pretty"}:
+    Console shows the scenario, tags and all the steps and descriptions and a link to all the steps
+    when we use "pretty" keyword under plugins, it shows all the steps which we executed in the console
+    html is the type of file
+    It will be saved in target folder, cucumber.html--> name of the file
+    plugin = {"pretty", "html:target/cucumber.html "}
+
+    After executing the test case, we have to reload the project from disk. Right click on report --> open in--> browser
+    This report doesn't contain screenshots; and every execution needs one, so have to implement a function to take
+    screenshots (inside CommonMethods)
+
+ // we use <includes> tag to run our runner classes from pom.xml file:
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M7</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*RunnerClass.java</include>
+                        </includes>
+                    </configuration>
+                </plugin>
+
+
+How to excute pom.xml :
+    Maven option --> far right vertical : open project name -> life cycle -> test, double click

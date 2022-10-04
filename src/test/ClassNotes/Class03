@@ -1,0 +1,38 @@
+Class 3 -
+
+-- recap --
+                -- architecture of framework --
+    1. utils - all the utilities of our project such as constants, config reader
+        common methods can be found under this package  etc to reuse them.
+
+
+    2. steps - all step definitions can be found under this package for the gherkin
+       steps we used in feature file
+    3. Pages -- POM -- we need it to implement object repository and functions.
+       (We store all the WebElements- objects in it--> we use page factory to initialize them)
+
+    4. Runner class - we use this class to execute all of our test cases
+
+
+// When we only want to get the step definition for one specific step: we put comma next to glue and write: dryRun = true
+
+
+For pre condition and post condition in cucumber we have 2 annotations
+
+Hooks -
+@Before - this one we use for pre condition
+@After - this one we use for post condition
+
+- Hooks should always be mentioned under steps package (separate class)
+
+
+Background vs hooks
+
+Hooks are applicable to all feature files
+Background is applicable to just one feature file\
+
+Hooks execute first then background executes then scenario executes and in the
+end hooks executes again as post condition
+
+
+

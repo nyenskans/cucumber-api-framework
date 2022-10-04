@@ -1,0 +1,15 @@
+Recap
+
+Class 2 -
+
+--  Recap --
+  -- Cucumber - it is a tool that supports BDD
+  -- Gherkin language we use to write BDD
+  -- Feature, Scenario, Given, When, Then, And
+
+What is framework -
+    -- it is an organized structure which allows us to write clean and maintainable code
+
+    Feature file - declare steps in it
+
+POM - page object model is a design pattern in which we create object repository

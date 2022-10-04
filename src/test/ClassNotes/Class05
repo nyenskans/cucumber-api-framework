@@ -1,0 +1,35 @@
+Class 05 -
+
+    -- recap --
+        -- What is data driven testing?
+        -- Testing a functionality against multiple sets of data
+        -- Hybrid framework- supports data driven and behavior driven development testing
+        -- We shouldn't pass hardcoded data, instead we should make it extendable and dynamic
+
+       Issue with ddt: for each set of data
+    Data Table - works only for one step
+    Examples Table - works for entire scenario
+
+
+    For implementing the step with passing the data table this is what we get::
+
+@When("user adds multiple employees and verify they are added")
+public void user_adds_multiple_employees_and_verify_they_are_added(DataTable dataTable) {
+    // Write code here that turns the phrase above into concrete actions
+    // For automatic transformation, change DataTable to one of
+    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+    //
+    // For other transformations you can register a DataTableType.
+    throw new io.cucumber.java.PendingException();
+
+    So we need to use list of maps for passing this data from data table
+
+   Only one test will be executed for all data sets, not three
+   When we use data tables, the background, hooks, will only be executed once for the entire scenario, not once for
+   each key-value pair
+
+    The <li> HTML element is used to represent an item in a list.
+    It must be contained in a parent element: an ordered list ( <ol> ), an unordered list ( <ul> ), or a menu ( <menu> )
+}

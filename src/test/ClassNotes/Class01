@@ -1,0 +1,95 @@
+
+*Cucumber--> a tool that supports Behavior-Driven Development(BDD)
+
+    Scenario Keywords:
+    *Given: pre-condition
+    *When: to perform actions
+    *And: supporting tag
+    *Then: expected result/outcome
+
+
+
+Script Examples:
+
+
+(US- User Story)
+US - 12345 - search employee by name
+Given user is able to open chrome browser
+When user enters username and password
+And user clicks on login button
+Then user is navigated to dashboard page
+When user clicks on PIM option
+And user clicks on employee list option
+When user enters name in the employee name field
+And user clicks on search button
+Then user is able to see the employee
+
+2345 - Search employee by id
+Given user is able to open chrome browser
+When user enters username and password
+And user clicks on login button
+Then user is navigated to dashboard page
+When user clicks on PIM option
+And user clicks on employee list option
+When user enters id in the employee id field
+And user clicks on search button
+Then user is able to see the employee
+
+**Cucumber encourages code re-usability concept
+
+
+
+Package main: in it is the code to develop the application (we delete it)
+Package test : in it is the code to test the application (we only keep test)
+
+
+Framework is an organized structure of folders that tells us what to write where
+Set of guidelines
+
+We need framework to be able to perform data driven testing (testing different sets of data)
+
+
+        Characteristics of Framework:
+- should be developed so that anybody can plug in and use it
+- it must not be project dependent
+- Should be reusable and easy to manage/maintain
+- flows should be clear
+- It should be fairly simple
+- It should not contain hardcoded values
+- It should be easily expanded/enhanced
+- It should be platform independent
+
+
+
+    Benefits:
+- increases team's speed and efficiency
+- lowers risk from errors
+- improved test efficiency
+- lower maintenance costs
+- minimal manual intervention
+- maximum test coverage
+- reusability of code
+
+
+    2 mandatory things in each project:
+- code - java
+- non code - (excel files, properties etc)
+
+
+To write gherkin scenarios, we use feature files
+Scenario :
+Valid admin login
+Given user is navigated to hrms application
+When user enters adin username and password
+And clicks on login button
+Then admin user is successfully logged in
+
+Every scenario is considered as one test case
+
+// we can execute just one scenario or all scenarios in .feature
+// when we want to execute all feature files, we use Runner class (part of java)
+
+
+We don't need System.setProperty() - path
+if the path is incorrect to webdriver the script will fail (path is limited to one machine)
+WebDriverManager will be dealing with that
