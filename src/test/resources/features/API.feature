@@ -27,3 +27,24 @@ Feature: API workflow resource
     |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|
     |Azeddine     |Sterling    |M              |Male      |2022-10-03  |Hired     |QA           |
 
+  @json
+  Scenario: Creating an employee via json payload# only this first step will need to be implemented
+    Given a request is prepared for creating an employee via json payload
+    When a POST call is made to create an employee
+    Then the status code for creating an employee is 201
+    And the employee created contains key "Message" and value "Employee Created"
+    And the employee id "Employee.employee_id" is stored as global variable
+
+   @dynamic
+   Scenario: Creating an employee using a more dynamic payload
+     Given a request is prepared for creating an employee using more dynamic payload "Azeddine", "Sterling", "M", "M", "2012-09-14" , "hired" , "QA"
+     When a POST call is made to create an employee
+     Then the status code for creating an employee is 201
+     And the employee created contains key "Message" and value "Employee Created"
+     And the employee id "Employee.employee_id" is stored as global variable
+
+    @update
+    Scenario: Updating the employee details
+      Given a request is prepared for updating an employee
+      When a PUT call is made to updating an employee
+      Then the status code is 200

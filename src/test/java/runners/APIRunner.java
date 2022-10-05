@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         // instead we need to create a new package APIsteps
         dryRun = false,
         monochrome = true,
-        tags = "@api",
+        tags = "@update",
         plugin = {"pretty"}
 )
 public class APIRunner {
